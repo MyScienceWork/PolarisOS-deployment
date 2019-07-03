@@ -29,6 +29,11 @@ docker-compose up
 
 Running CTRL+C will stop the containers.
 
+Administration account :
+
+- email: admin@mysciencework.com
+- password: admin
+
 **This repository is for demonstration purpose only DO NOT USE IT IN PRODUCTION**
 
 ## Start development
