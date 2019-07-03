@@ -27,6 +27,18 @@ Start application stack with docker-compose :
 docker-compose up
 ```
 
+Please wait for theses lines
+```
+info: Starting koalication...
+info: PolarisOS started on port 5556
+info: PolarisOS environment => production
+info: Grobid host:port => grobid:8080
+info: Minio host:port => minio:9000
+```
+
+Open you browser and go to :
+[http://localhost:8080](http://localhost:8080)
+
 Running CTRL+C will stop the containers.
 
 Administration account :
@@ -41,4 +53,12 @@ Administration account :
 To start using PolarisOS, we recommend that you begin with the "How to develop the solution?"
 section in [the PolarisOS documentation](https://mysciencework.github.io/PolarisOS/manual/deployment.html).
 
+![PolarisOS front_office](img/1.png)
 
+![PolarisOS front_office](img/2.png)
+
+![PolarisOS front_office](img/3.png)
+
+![PolarisOS front_office](img/4.png)
+
+![PolarisOS front_office](img/5.png)
