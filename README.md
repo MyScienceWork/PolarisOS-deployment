@@ -8,6 +8,7 @@ Polaris OS is a data-driven repository and data analysis solution for the servic
 Requirements:
 
 * docker-compose 1.24.0
+[https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
 
 ## Getting started
 
@@ -21,6 +22,7 @@ A provided `docker-compose.yml` file will provision the following set of service
 To start, clone this repository : 
 ```
 git clone https://github.com/MyScienceWork/PolarisOS-deployment.git
+cd PolarisOS-deployment
 ```
 Start application stack with docker-compose :
 ```
