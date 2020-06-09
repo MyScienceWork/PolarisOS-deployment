@@ -7,7 +7,7 @@ until $(curl --output /dev/null --silent --head --fail http://elasticsearch:9200
 done
 
 # fix development address elasticsearch
-sed -i 's/localhost:9200/elasticsearch:9200/g' /app/app/config/development.js
+sed -i 's/localhost:9201/elasticsearch:9200/g' /app/app/config/development.js
 node --harmony /app/app/create_indices.js --create
 
 # now healthcheck OK for bootstrap

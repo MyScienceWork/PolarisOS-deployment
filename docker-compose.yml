@@ -1,7 +1,7 @@
 version: "2.1"
 services:
  elasticsearch:
-  image: 'elasticsearch:5.2'
+  image: 'elasticsearch:7.6.1'
   #deployment_strategy: every_node
   healthcheck:
     test: ["CMD", "curl", "-f", "http://localhost:9200"]
@@ -18,9 +18,13 @@ services:
   environment:
   - bootstrap.memory_lock=false
   - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+  - cluster.initial_master_nodes=elasticsearch
+  - node.master=true
+  - discovery.zen.minimum_master_nodes=1
+  - node.name=elasticsearch
 
  app:
-   image: mysciencework/polarisos:0.9.43
+   image: mysciencework/polarisos:1.0.1
    healthcheck:
      test: ["CMD", "curl", "-f", "http://localhost:8080"]
      interval: 10s
@@ -36,7 +40,7 @@ services:
    entrypoint: "bash -c 'chmod +x /tmp/start-app.sh; /tmp/start-app.sh'"
 
  bootstrap:
-   image: mysciencework/polarisos-bootstrap:0.1
+   image: mysciencework/polarisos-bootstrap:0.2
    healthcheck:
      test: ["CMD", "curl", "-f", "http://localhost:8080"]
      interval: 10s
