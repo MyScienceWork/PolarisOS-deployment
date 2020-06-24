@@ -24,7 +24,7 @@ services:
   - node.name=elasticsearch
 
  app:
-   image: mysciencework/polarisos:1.0.1
+   image: mysciencework/polarisos:1.0.3
    healthcheck:
      test: ["CMD", "curl", "-f", "http://localhost:8080"]
      interval: 10s
@@ -40,7 +40,7 @@ services:
    entrypoint: "bash -c 'chmod +x /tmp/start-app.sh; /tmp/start-app.sh'"
 
  bootstrap:
-   image: mysciencework/polarisos-bootstrap:0.2
+   image: mysciencework/polarisos-bootstrap:0.3
    healthcheck:
      test: ["CMD", "curl", "-f", "http://localhost:8080"]
      interval: 10s
@@ -51,3 +51,10 @@ services:
      condition: service_healthy
     app:
      condition: service_healthy
+
+ minio:
+   image: minio/minio:RELEASE.2020-04-15T19-42-18Z
+   command: [ "server","/data" ]
+   environment:
+     MINIO_ACCESS_KEY: D6WATDX0QDZ1I61CACYZ
+     MINIO_SECRET_KEY: NdD50gVGH40OeK2s+W3kPnF+qU9DntxO2HwDT2luoC
